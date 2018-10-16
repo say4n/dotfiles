@@ -13,7 +13,7 @@ alias -- -="cd -"
 # Shortcuts
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias p="cd ~/Projects"
+alias p="cd ~/Desktop/Projects"
 alias g="git"
 
 
