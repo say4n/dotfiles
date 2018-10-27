@@ -1,0 +1,29 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"GitGutter",
+		"JSON Reindent",
+		"MarkdownPreview",
+		"Monokai - Spacegray",
+		"One Dark Color Scheme",
+		"Package Control",
+		"Pretty JSON",
+		"SideBarEnhancements",
+		"SublimeCodeIntel",
+		"SublimeHighlight",
+		"SublimeLinter",
+		"SublimeLinter-gcc",
+		"SublimeLinter-pycodestyle",
+		"Terminal",
+		"Theme - One Dark",
+		"TrailingSpaces"
+	],
+	"repositories":
+	[
+		"https://github.com/n1k0/SublimeHighlight/tree/python3"
+	]
+}
