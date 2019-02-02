@@ -67,12 +67,12 @@ set clipboard=unnamed
 
 " ----- PEP 8 -----
 au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
+    \ set tabstop=4|
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
     \ set fileformat=unix
 
 
@@ -130,8 +130,8 @@ let g:nerdtree_tabs_open_on_console_startup = 0
 let g:syntastic_error_symbol = '✘'
 let g:syntastic_warning_symbol = "▲"
 augroup mySyntastic
-    au!
-    au FileType tex let b:syntastic_mode = "passive"
+ 	au!
+ 	au FileType tex let b:syntastic_mode = "passive"
 augroup END
 
 
@@ -164,9 +164,9 @@ let g:airline#extensions#hunks#non_zero_only = 1
 " ----- Raimondi/delimitMate settings -----
 let delimitMate_expand_cr = 1
 augroup mydelimitMate
-    au!
-    au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
-    au FileType tex let b:delimitMate_quotes = ""
-    au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
-    au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
+	au!
+	au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
+	au FileType tex let b:delimitMate_quotes = ""
+	au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
+	au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END
