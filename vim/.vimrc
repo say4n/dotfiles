@@ -5,10 +5,6 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
-
-
-
-
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
@@ -38,17 +34,14 @@ Plugin 'Raimondi/delimitMate'
 
 call vundle#end()
 
-
-
-
 filetype plugin indent on
 
 " --- General settings ---
 set backspace=indent,eol,start
 " Show the cursor position
 set ruler
-" Enable line numbers
-set number
+" Enable hybrid line numbers
+set number relativenumber
 " Show the (partial) command as it’s being typed
 set showcmd
 " Highlight dynamically as pattern is typed
