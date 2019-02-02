@@ -10,10 +10,9 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " ----- Making Vim look good ------------------------------------------
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'joshdick/onedark.vim'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'itchyny/lightline.vim'
 
 " ----- Vim as a programmer's text editor -----------------------------
 Plugin 'scrooloose/nerdtree'
@@ -67,7 +66,7 @@ set background=dark
 "let g:solarized_termcolors=256
 
 " Set the colorscheme
-colorscheme solarized
+colorscheme onedark
 
 
 " ----- bling/vim-airline settings -----
@@ -88,6 +87,10 @@ let g:airline_detect_paste=1
 let g:airline#extensions#tabline#enabled = 1
 
 
+" ----- joshdark/onedark.vim -----
+"  " lightline enable
+let g:airline_theme = 'onedark'
+
 " ----- jistr/vim-nerdtree-tabs -----
 "  " Open/close NERDTree Tabs with \t
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
@@ -99,8 +102,8 @@ let g:nerdtree_tabs_open_on_console_startup = 0
 let g:syntastic_error_symbol = '✘'
 let g:syntastic_warning_symbol = "▲"
 augroup mySyntastic
-  au!
-  au FileType tex let b:syntastic_mode = "passive"
+ 	au!
+ 	au FileType tex let b:syntastic_mode = "passive"
 augroup END
 
 
