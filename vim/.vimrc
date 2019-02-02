@@ -17,12 +17,14 @@ Plugin 'itchyny/lightline.vim'
 " ----- Vim as a programmer's text editor -----------------------------
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'vim-scripts/indentpython.vim'
 
 " ----- Working with Git ----------------------------------------------
 Plugin 'airblade/vim-gitgutter'
@@ -56,6 +58,32 @@ syntax on
 
 set mouse=a
 
+set encoding=utf-8
+
+let python_highlight_all=1
+
+set clipboard=unnamed
+
+
+" ----- PEP 8 -----
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+
+" ----- Bad whitespace -----
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+
+" ----- Line markers at 79 characters -----
+set colorcolumn=79
+
+
 " ----- Plugin-Specific Settings --------------------------------------
 
 " ----- altercation/vim-colors-solarized settings -----
@@ -69,12 +97,10 @@ set background=dark
 colorscheme onedark
 
 
-" ----- Line markers at 79 characters -----
-set colorcolumn=79
-
 " ----- bling/vim-airline settings -----
 " Always show statusbar
 set laststatus=2
+
 
 " Fancy arrow symbols, requires a patched font
 " To install a patched font, run over to
@@ -83,8 +109,10 @@ set laststatus=2
 " Finally, uncomment the next line
 let g:airline_powerline_fonts = 1
 
+
 " Show PASTE if in paste mode
 let g:airline_detect_paste=1
+
 
 " Show airline for tabs too
 let g:airline#extensions#tabline#enabled = 1
@@ -93,6 +121,7 @@ let g:airline#extensions#tabline#enabled = 1
 " ----- joshdark/onedark.vim -----
 "  " lightline enable
 let g:airline_theme = 'onedark'
+
 
 " ----- jistr/vim-nerdtree-tabs -----
 "  " Open/close NERDTree Tabs with \t
@@ -123,6 +152,7 @@ let g:easytags_suppress_ctags_warning = 1
 " ----- majutsushi/tagbar settings -----
 " Open/close tagbar with \b
 nmap <silent> <leader>b :TagbarToggle<CR>
+
 
 " Uncomment to open tagbar automatically whenever possible
 "autocmd BufEnter * nested :call tagbar#autoopen(0)
