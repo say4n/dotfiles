@@ -76,10 +76,6 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix
 
 
-" ----- Bad whitespace -----
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-
-
 " ----- Line markers at 79 characters -----
 set colorcolumn=79
 
