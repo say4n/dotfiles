@@ -12,8 +12,8 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 
-# Make Sublime Text the default editor.
-export EDITOR='subl';
+# Make vim the default editor.
+export EDITOR='vim';
 
 
 # Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
