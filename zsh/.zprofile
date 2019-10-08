@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
 
-source ~/.bash_prompt
-source ~/.bashrc
-source ~/.bash_aliases
+source ~/.zshrc
+source ~/.zaliases
 
 
 
@@ -24,9 +23,8 @@ export PYTHONIOENCODING='UTF-8';
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 
-# Autocorrect typos in path names when using `cd`
-shopt -s cdspell;
-
-
 # iTerm 2 bash intergration
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+
+export PATH="$HOME/.cargo/bin:$PATH"
