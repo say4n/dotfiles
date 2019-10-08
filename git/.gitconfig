@@ -1,0 +1,25 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Sayan Goswami
+	email = goswami.sayan47@gmail.com
+	signingkey = 7B183F66AD1CF1F1
+[core]
+	editor = vim
+
+[alias]
+ 	co = checkout
+ 	ci = commit
+	st = status
+  	br = branch
+  	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  	type = cat-file -t
+	dump = cat-file -p
+
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
