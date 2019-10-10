@@ -1,9 +1,4 @@
-#!/usr/bin/env bash
-
-
-source ~/.zshrc
-source ~/.zaliases
-
+#!/usr/bin/env zsh
 
 
 # To make pipenv work - https://github.com/pypa/pipenv/issues/538
@@ -26,5 +21,6 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 # iTerm 2 bash intergration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-
+# Rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
