@@ -1,5 +1,5 @@
+#! /usr/bin/env bash
 
+# Add scroll via mouse.
+defaults write com.googlecode.iterm2 AlternateMouseScroll -bool true
 
-# Install powerline-shell
-# https://github.com/b-ryan/powerline-shell#bash
-pip3 install powerline-shell
