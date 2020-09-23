@@ -1,0 +1,31 @@
+#!/bin/sh
+
+exec 2>&1
+
+export HOME=/home/pi
+WAN_IP_FILE=/home/pi/wanip
+W3M=/usr/bin/w3m
+WAN_IP_FETCH="$W3M -dump checkip.dyndns.org"
+IP=''
+
+if [ -f "$WAN_IP_FILE" ]; 
+then
+	IP=`cat "$WAN_IP_FILE"`
+	lastrun=$(stat -c %Y "$WAN_IP_FILE") || lastrun=0
+	expiration=$(expr $lastrun + 3600)
+
+	if [ $(date +%s) -ge $expiration ];
+	then
+	       $WAN_IP_FETCH | sed -e 's/Current IP Address: //g' > "$WAN_IP_FILE" &
+	fi	       
+else
+	IP=`hostname -i`
+	$WAN_IP_FETCH | sed -e 's/Current IP Address: //g' > "$WAN_IP_FILE" &
+fi
+
+LOLCAT=/usr/games/lolcat
+FIGLET=/usr/bin/figlet
+BOXES=/usr/bin/boxes
+
+$FIGLET -f slant "sayan's pi" | $BOXES -d boxquote | sed "s/\[ *\]/\[ ${IP} \]/" | $LOLCAT -f
+
