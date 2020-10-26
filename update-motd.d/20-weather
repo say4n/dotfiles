@@ -1,0 +1,27 @@
+#!/bin/sh
+
+CURL="/usr/bin/curl -s"
+URL="wttr.in/?format=%C,+%t,+%w\n"
+AQI="https://api.waqi.info/feed/here/?token=255b54a8c1985898cdf50f357c5a0a81d555b38f"
+
+WEATHER_CACHE=/home/pi/weather
+AQI_CACHE=/home/pi/aqi
+
+if [ -f "$WEATHER_CACHE" ]; 
+then
+	echo "AQI:\t\t\t$(cat $AQI_CACHE)"
+	echo "Weather:\t\t$(cat $WEATHER_CACHE)"
+
+	lastrun=$(stat -c %Y "$WEATHER_CACHE") || lastrun=0
+	expiration=$(expr $lastrun + 60)
+
+	if [ $(date +%s) -ge $expiration ];
+	then
+		$CURL $URL > $WEATHER_CACHE &
+		$CURL $AQI | jq '.data.aqi' > $AQI_CACHE &
+	fi
+else
+	$CURL $URL > $WEATHER_CACHE &
+	$CURL $AQI | jq '.data.aqi' > $AQI_CACHE &
+fi
+

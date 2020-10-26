@@ -1,0 +1,7 @@
+#!/bin/sh
+
+DATE="Today is:\t\t$(date)"
+UNAME="Kernel information:\t$(uname -srm)"
+
+echo $DATE
+echo $UNAME
