@@ -10,7 +10,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " ----- Making Vim look good ------------------------------------------
-Plugin 'joshdick/onedark.vim'
+"Plugin 'joshdick/onedark.vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'itchyny/lightline.vim'
 
@@ -42,7 +42,7 @@ set backspace=indent,eol,start
 " Show the cursor position
 set ruler
 " Enable hybrid line numbers
-set number relativenumber
+set number 
 " Show the (partial) command as it’s being typed
 set showcmd
 " Highlight dynamically as pattern is typed
@@ -90,7 +90,7 @@ set background=dark
 "let g:solarized_termcolors=256
 
 " Set the colorscheme
-colorscheme onedark
+"colorscheme onedark
 
 
 " ----- bling/vim-airline settings -----
